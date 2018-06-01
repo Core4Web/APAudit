@@ -1,25 +1,45 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/fontawesome-all.min.css">
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-
-        </div>
-    </div>
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-</body>
-</html>
+<div class="container">
+    <h3>Параметры задачи</h3>
+    <form>
+        <fieldset>
+            <div class="form-group">
+                <label for="address" class="form-control-label">Адрес точки доступа</label>
+                <input class="form-control" id="address" type="text" />
+            </div>
+            <div class="form-group">
+                <label for="phone" class="form-control-label">Телефон проверяющего</label>
+                <input class="form-control" id="phone" type="text" />
+            </div>
+            <div class="form-group">
+                <label for="description" class="form-control-label">Примечание</label>
+                <textarea class="form-control" id="description" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" />Тестовая задача
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="d-block">Перезапускать задачу при ошибке?</label>
+                <div class="form-check-inline">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="isRestartonError" />Да
+                    </label>
+                </div>
+                <div class="form-check-inline">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="isRestartonError" />Нет
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <button class="btn btn-primary" type="submit">Отправить</button>
+    </form>
+</div>
