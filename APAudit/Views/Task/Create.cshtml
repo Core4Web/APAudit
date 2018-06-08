@@ -3,6 +3,7 @@
 <div class="container">
     <h3>Параметры задачи</h3>
     <form method="post" asp-controller="Task" asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <fieldset>
             <div class="form-group">
                 <label asp-for="District" class="form-control-label"></label>
@@ -13,14 +14,17 @@
             <div class="form-group">
                 <label asp-for="Operator" class="form-control-label"></label>
                 <input class="form-control" asp-for="Operator" />
+                <div><span asp-validation-for="Operator" class="text-danger"></span></div>
             </div>
             <div class="form-group">
                 <label asp-for="Address" class="form-control-label"></label>
                 <input class="form-control" asp-for="Address" />
+                <div><span asp-validation-for="Address" class="text-danger"></span></div>
             </div>
             <div class="form-group">
                 <label asp-for="Phone" class="form-control-label"></label>
                 <input class="form-control" asp-for="Phone" />
+                <div><span asp-validation-for="Phone" class="text-danger"></span></div>
             </div>
             <div class="form-group">
                 <label asp-for="Notes" class="form-control-label"></label>
@@ -52,6 +56,8 @@
 </div>
 
 @section scripts {
+    <script src="~/js/jquery.validate.min.js"></script>
+    <script src="~/js/jquery.validate.unobtrusive.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $("input.input-validation-error")

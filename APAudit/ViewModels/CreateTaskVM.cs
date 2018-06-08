@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -12,10 +13,12 @@ namespace APAudit.ViewModels
         public int Id { get; set; }
         [Display(Name = "Регион")]
         public string District { get; set; }
+        [Required(ErrorMessage ="Введите наименование оператора")]
         [Display(Name ="Провайдер")]
         public string Operator { get; set; }
         [Display(Name = "Адрес точки доступа")]
         public string Address { get; set; }
+        /*[Remote("ValidateCheck", "Task")]*/
         [Display(Name = "Телефон проверяющего")]
         public string Phone { get; set; }
         [Display(Name = "Примечание")]

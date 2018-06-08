@@ -13,7 +13,8 @@ namespace APAudit
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc().AddMvcOptions(opt =>
+                opt.ModelBindingMessageProvider.SetMissingBindRequiredValueAccessor(value => "Введите значение"));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

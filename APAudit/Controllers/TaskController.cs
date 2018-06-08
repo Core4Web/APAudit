@@ -33,14 +33,17 @@ namespace APAudit.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public IActionResult Create(CreateTaskVM model)
         {
-            if (string.IsNullOrEmpty(model.Operator))
-                ModelState.AddModelError(nameof(model.Operator), "Введите наименование оператора связи!");
             if (ModelState.IsValid)
             {
                 return RedirectToAction("Index");
             }
             else
                 return View(model);
+        }
+
+        public JsonResult ValidateCheck(bool value)
+        {
+            return Json("Телефон не верен");
         }
     }
 }
